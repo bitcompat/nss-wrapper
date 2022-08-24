@@ -13,4 +13,9 @@ jobs:
       image_tag: |
         latest
         1.1.12-bullseye-r1
+        1-bullseye-r1
+        1.1.12-bullseye
+        1.1.12
+        1.1
+        1
     secrets: inherit
