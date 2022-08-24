@@ -1,0 +1,16 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_package:
+    uses: bitcompat/base/.github/workflows/build.yaml@main
+    with:
+      name: main
+      image_tag: |
+        latest
+        1.1.12-bullseye-r1
+    secrets: inherit
