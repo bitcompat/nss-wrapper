@@ -14,8 +14,8 @@ jobs:
         latest
         1.1.15-bullseye-r1 # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
         1-bullseye-r1
-        1.1.13-bullseye # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
-        1.1.13 # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
+        1.1.15-bullseye # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
+        1.1.15 # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
         1.1
         1
     secrets: inherit
