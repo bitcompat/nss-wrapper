@@ -20,6 +20,8 @@ RUN <<EOT bash
     cmake -DCMAKE_INSTALL_PREFIX=/opt/bitnami/${TARGET_DIR} -DCMAKE_BUILD_TYPE=Release ../${PACKAGE}_source
     make -j\$(nproc)
     make install
+
+    rm -rf /opt/bitnami/${TARGET_DIR}/share
 EOT
 
 FROM docker.io/bitnami/minideb:bullseye as stage-0
