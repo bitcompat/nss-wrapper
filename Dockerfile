@@ -13,6 +13,7 @@ RUN install_packages ca-certificates curl git build-essential g++ cmake tar gzip
 RUN <<EOT bash
     mkdir -p /opt/src/${PACKAGE}
     mkdir -p /opt/bitnami/${TARGET_DIR}
+    mkdir -p /opt/bitnami/${TARGET_DIR}/licenses
 
     cd /opt/src
     git clone -b ${REF} git://git.samba.org/nss_wrapper.git nss_wrapper_source
@@ -22,6 +23,7 @@ RUN <<EOT bash
     make install
 
     rm -rf /opt/bitnami/${TARGET_DIR}/share
+    cp -f ../nss_wrapper_source/LICENSE /opt/bitnami/${TARGET_DIR}/licenses/${PACKAGE}-${VERSION}.txt
 EOT
 
 FROM docker.io/bitnami/minideb:bullseye as stage-0
