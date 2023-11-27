@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.4
-FROM docker.io/bitnami/minideb:bullseye as builder
+FROM docker.io/bitnami/minideb:bookworm as builder
 
 ARG PACKAGE=nss_wrapper
 ARG TARGET_DIR=common
@@ -26,6 +26,6 @@ RUN <<EOT bash
     cp -f ../nss_wrapper_source/LICENSE /opt/bitnami/${TARGET_DIR}/licenses/${PACKAGE}-${VERSION}.txt
 EOT
 
-FROM docker.io/bitnami/minideb:bullseye as stage-0
+FROM docker.io/bitnami/minideb:bookworm as stage-0
 
 COPY --link --from=builder /opt/bitnami /opt/bitnami

@@ -10,12 +10,7 @@ jobs:
     uses: bitcompat/base/.github/workflows/build.yaml@main
     with:
       name: main
-      image_tag: |
-        latest
-        1.1.15-bullseye-r3 # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
-        1-bullseye-r3
-        1.1.15-bullseye # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
-        1.1.15 # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
-        1.1
-        1
+      version: '1.1.15'
+      latest: true
+      major_only_tag: true
     secrets: inherit
