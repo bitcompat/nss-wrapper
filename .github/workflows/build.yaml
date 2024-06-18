@@ -13,4 +13,5 @@ jobs:
       version: '1.1.15'
       latest: true
       major_only_tag: true
+      revision: '2'
     secrets: inherit
