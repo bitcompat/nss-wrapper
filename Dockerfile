@@ -4,7 +4,7 @@ FROM docker.io/bitnami/minideb:bookworm as builder
 ARG PACKAGE=nss_wrapper
 ARG TARGET_DIR=common
 # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
-ARG VERSION=1.1.15
+ARG VERSION=1.1.16
 ARG REF=nss_wrapper-${VERSION}
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
