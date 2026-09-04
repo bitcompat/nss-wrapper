@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.18
+# syntax=docker/dockerfile:1.27
 FROM docker.io/bitnami/minideb:bookworm as builder
 
 ARG PACKAGE=nss_wrapper
