@@ -1,10 +1,11 @@
 # syntax=docker/dockerfile:1.27
-FROM docker.io/bitnami/minideb:bookworm as builder
+FROM docker.io/bitnami/minideb:trixie as builder
 
 ARG PACKAGE=nss_wrapper
 ARG TARGET_DIR=common
 # renovate: datasource=git-tags depName=git://git.samba.org/nss_wrapper.git extractVersion=^nss_wrapper-(?<version>.*)$
-ARG VERSION=1.1.16
+ARG BUILD_VERSION=1.1.16
+ARG VERSION=${BUILD_VERSION}
 ARG REF=nss_wrapper-${VERSION}
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -26,6 +27,6 @@ RUN <<EOT bash
     cp -f ../nss_wrapper_source/LICENSE /opt/bitnami/${TARGET_DIR}/licenses/${PACKAGE}-${VERSION}.txt
 EOT
 
-FROM docker.io/bitnami/minideb:bookworm as stage-0
+FROM docker.io/bitnami/minideb:trixie as stage-0
 
 COPY --link --from=builder /opt/bitnami /opt/bitnami
