@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.28
+# syntax=docker/dockerfile:1.29
 FROM docker.io/bitnami/minideb:trixie as builder
 
 ARG PACKAGE=nss_wrapper
